@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ConditionalExpr } from '@angular/compiler';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../user.class';
 import { UserService } from '../user.service';

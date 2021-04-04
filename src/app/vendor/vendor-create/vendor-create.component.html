@@ -1,1 +1,48 @@
-<p>vendor-create works!</p>
+<app-menu></app-menu>
+<div>
+    <h3>Vendor Create</h3>|
+    <span> | </span>
+    <table class="table table-lg">
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="vendor.id" type="text" disabled></td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <td><input [(ngModel)]="vendor.code" type="text"></td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td><input [(ngModel)]="vendor.name" type="text"></td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td><input [(ngModel)]="vendor.address" type="text"></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td><input [(ngModel)]="vendor.city" type="text"></td>
+        </tr>
+        <tr>
+            <th>State</th>
+            <td><input [(ngModel)]="vendor.state" type="text"></td>
+        </tr>
+        <tr>
+            <th>ZipCode</th>
+            <td><input [(ngModel)]="vendor.zip" type="text"></td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td><input [(ngModel)]="vendor.phone" type="text"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input [(ngModel)]="vendor.email" type="text"></td>
+        </tr>
+        <tr>
+            <button (click)="save()" class="btn btn-info">Save</button>
+        </tr>
+    </table>
+</div>
+
+

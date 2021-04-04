@@ -2,22 +2,20 @@
 <div id="component">
     <span>Vendor List | </span>
     <span><a routerLink="/vendors/create">Create</a></span>|
-    <input [(ngModel)]="searchCriteria" type="text" placeholder="Search">
-    
-        <table class = "table table-lg">
-            <tr>
-                <th>Id</th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip</th>
-                <th>Phone</th>
-                <th>Email</th>
-            </tr>
-        
-        <tr *ngFor="let vendor of vendors | vendorSearch: searchCriteria | sort:sortCriteria:sortAsc">
+    <span><input [(ngModel)]="searchCriteria" type ="text" placeholder="Search"></span>
+    <table class="table table-lg">
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        <tr *ngFor="let vendor of vendors">
             <td>{{vendor.id}}</td>
             <td>{{vendor.code}}</td>
             <td>{{vendor.name}}</td>
@@ -28,8 +26,7 @@
             <td>{{vendor.phone}}</td>
             <td>{{vendor.email}}</td>
             <td>
-                <a routerLink="/vendor/detail/{{v.id}}">Detail</a>  |  
-                <a routerLink="/vendor/edit/{{v.id}}">Edit</a>
+                <a routerLink="/vendor/detail/{{vendor.id}}">Detail</a> |
+                <a routerLink="/vendor/edit/{{vendor.id}}">Edit</a>
             </td>
-        </tr>
-</div>
+        
