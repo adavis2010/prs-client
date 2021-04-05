@@ -13,8 +13,7 @@ export class VendorSearchPipe implements PipeTransform {
             return vendors;
         }
         for (let vendor of vendors) {
-            if (
-                 vendor.id.toString().includes(searchCriteria.toLowerCase)
+            if (vendor.id.toString().includes(searchCriteria.toLowerCase)
                 || vendor.name.toString().includes(searchCriteria.toLowerCase)
                 || vendor.code.toString().includes(searchCriteria.toLowerCase)
                 || vendor.address.toString().includes(searchCriteria.toLowerCase)

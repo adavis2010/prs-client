@@ -5,7 +5,7 @@
             <h3>User Edit</h3>
         </span>
     </div>
-    <table class="table table-lg" *ngIf="user"></table>
+    <table class="table table-lg" *ngIf="user">
         <tr>
             <th>Id</th>
             <td>
@@ -61,6 +61,7 @@
                 <input [(ngModel)]="user.isAdmin" type="checkbox">
             </td>
         </tr>
+        </table>
     <button (click)="save()" class="btn btn-success">Save</button> |
 
 </div>

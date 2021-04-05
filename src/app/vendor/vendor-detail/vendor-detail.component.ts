@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../vendor.service';
-import { Vendor} from '../vendor.class';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Vendor} from '../vendor.class';
+
 
 @Component({
   selector: 'app-vendor-detail',
@@ -14,35 +15,48 @@ export class VendorDetailComponent implements OnInit {
   id: number =0;
   showVerify: boolean = false; //verify button
 
-  vendors: Vendor[];
-  sortCriteria: string="id";
-  sortAsc: boolean=true;
- 
- 
-
-  sort(column:string): void {
-    if(column === this.sortCriteria) {
-      this.sortAsc= !this.sortAsc;
-      return;
-    }
-    this.sortAsc=true;
-    this.sortCriteria=column;
-  }
-
   constructor(
-    private vndrsvc: VendorService
+    private vndrsvc: VendorService,
+    private route: ActivatedRoute,//inject Activated Route
+    private router: Router
   ) { }
 
-  ngOnInit(): void {
-    this.vndrsvc.list().subscribe(
-      res => {
-        console.log(res);
-        this.vendors = res as Vendor[]
+  
+  toggleVerify():void{
+    this.showVerify = !this.showVerify
+  }
+
+  delete():void{
+    this.vndrsvc.remove(this.vendor).subscribe(
+      res =>{
+        console.log("Delete was Successful");
+        this.router.navigateByUrl("/vendors/list");
       },
-      err=> {
+      err => {
+        console.error(err);
+      }
+    )
+  }
+
+  edit():void {
+    this.router.navigateByUrl(`/vendors/edit/${this.vendor.id}`);
+
+  }
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params.id; // creating variable and snapshot of url route
+    this.vndrsvc.get(+this.id).subscribe(
+      res =>{
+        console.log("Vendor:", res);
+        this.vendor = res;
+      },
+      err => {
         console.error(err);
       }
     );
+
   }
+
+
 }
   

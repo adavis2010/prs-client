@@ -28,7 +28,7 @@ export class VendorService {
     return this.http.put(`${baseurl}/${vendor.id}`, vendor) as Observable<any>;
   }
 
-  remove(id:number): Observable<Vendor> { //Remove / Delete (2 parameters)
-    return this.http.delete(`${baseurl}/${id}`) as Observable<Vendor>;
+  remove(vendor:Vendor): Observable<Vendor> { //Remove / Delete (2 parameters)
+    return this.http.delete(`${baseurl}/${vendor.id}`) as Observable<Vendor>;
   }
 }

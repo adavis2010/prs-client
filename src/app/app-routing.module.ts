@@ -19,11 +19,13 @@ const routes: Routes = [
   { path :'users/create', component: UserCreateComponent},
   { path :'users/edit/:id', component: UserEditComponent},
   { path :'login', component: UserLoginComponent},
-  { path: '**', component: HomeComponent },
+  
   { path :'vendors/list', component: VendorListComponent},
   { path :'vendors/detail/:id', component: VendorDetailComponent}, // : means variable
   { path :'vendors/create', component: VendorCreateComponent},
-  { path :'vendors/edit/:id', component: VendorEditComponent}
+  { path :'vendors/edit/:id', component: VendorEditComponent},
+
+  { path: '**', component: HomeComponent }, // needs to be at the end
 ];
 
 @NgModule({

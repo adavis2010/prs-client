@@ -18,20 +18,11 @@ export class VendorListComponent implements OnInit { // implements = Interface
   sortAsc: boolean=true;
  
 
-  // sort(column:string): void {
-  //   if(column === this.sort) {
-  //     this.sortAsc= !this.sortAsc;
-  //     return;
-  //   }
-   //  this.sortAsc=true;
-    
- // }
-
   ngOnInit(): void {
     this.vndrsvc.list().subscribe(
-      users => {
+      vendors => {
         console.log("Vendors: vendor", )
-        this.vendors = this.vendors;
+        this.vendors = vendors;
 
       },
       err => {
