@@ -33,6 +33,10 @@ import { RequestEditComponent } from './request/request-edit/request-edit.compon
 //import { RequestSearchPipe } from './request/request-search.pipe';
 import { VendorSearchPipe } from './vendor/vendor-search.pipe'
 import { ProductSearchPipe } from './product/product-search.pipe';
+import { RequestlineListComponent } from './requestline/requestline-list/requestline-list.component';
+import { RequestlineDetailComponent } from './requestline/requestline-detail/requestline-detail.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 
 
 @NgModule({
@@ -63,7 +67,11 @@ import { ProductSearchPipe } from './product/product-search.pipe';
     RequestEditComponent,
     //RequestSearchPipe,
     VendorSearchPipe,
-    ProductSearchPipe
+    ProductSearchPipe,
+    RequestlineListComponent,
+    RequestlineDetailComponent,
+    RequestlineEditComponent,
+    RequestlineCreateComponent
     
   ],
   imports: [

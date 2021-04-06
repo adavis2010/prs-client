@@ -13,13 +13,15 @@ export class ProductSearchPipe implements PipeTransform {
            return products;
         }
         for (let product of products) {
-            if (product.id.toString().includes(searchCriteria.toLowerCase)
-                || product.partNbr.toString().includes(searchCriteria.toLowerCase)
-                || product.description.toString().includes(searchCriteria.toLowerCase)
-                || product.price.toString().includes(searchCriteria.toLowerCase)
-                || product.unit.toString().includes(searchCriteria.toLowerCase)
-                || product.photoPath.toString().includes(searchCriteria.toLowerCase)
-                || product.vendorId.toString().includes(searchCriteria.toLowerCase)
+            if (product.id.toString().includes(searchCriteria.toLowerCase())
+                || product.partNbr.toString().includes(searchCriteria.toLowerCase())
+                || product.description.toString().includes(searchCriteria.toLowerCase())
+                || product.price.toString().includes(searchCriteria.toLowerCase())
+                || product.unit.toString().includes(searchCriteria.toLowerCase())
+
+                ||(product.photoPath!=null &&
+                   product.photoPath.toString().includes(searchCriteria.toLowerCase()))
+                || product.vendorId.toString().includes(searchCriteria.toLowerCase())
             )
                 selectedProducts.push(product)
         }

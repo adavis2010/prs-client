@@ -21,7 +21,7 @@ export class VendorEditComponent implements OnInit {
   save():void {
     this.vndrsvc.change(this.vendor).subscribe(
       res=> {
-        console.log("Vendor edit successful");
+        console.log("Vendor Edit Euccessful");
         this.router.navigateByUrl("/vendors/list");
       },
       err=>{

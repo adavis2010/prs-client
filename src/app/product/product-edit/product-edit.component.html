@@ -1,1 +1,56 @@
+<app-menu></app-menu>
+<div>
+    <div>
+        <span>
+            <h3>Product Edit</h3>
+        </span>
+    </div>
+    <table class="table table-lg" *ngIf="products">
+        <tr>
+            <th>Id</th>
+            <td>
+                <input [(ngModel)]="products.id" type="text" disabled>
+            </td>
+        </tr>
 
+        <tr>
+            <th>PartNbr</th>
+            <td>
+                <input [(ngModel)]="products.partNbr" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                <input [(ngModel)]="products.description" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>
+                <input [(ngModel)]="products.price" type="number">
+            </td>
+        </tr>
+        <tr>
+            <th>Unit</th>
+            <td>
+                <input [(ngModel)]="products.unit" type="text">
+            </td>
+        </tr>
+        <tr>
+            <th>Photo Path</th>
+            <td>
+                <input [(ngModel)]="products.photopath" type="text">
+            </td>
+        </tr>
+        <th>Vendor Name</th>
+    <td>
+        <select [(ngModel)]="products.vendorId">
+        <option *ngFor="let vendor of vendors" value="{{vendor.id}}">{{vendor.name}}</option>
+    </select>
+    </td> |
+    <tr>
+        <button (click)="save()" class="btn btn-success">Save</button>
+   </tr>
+</table>
+</div>

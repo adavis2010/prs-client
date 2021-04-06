@@ -21,11 +21,11 @@ export class ProductService {
   }
 
   create(product:Product): Observable<Product> { //Create/ Post(2 parameters)
-    return this.http.post(`${baseurl}`,`${product.id}` ) as Observable<Product>;
+    return this.http.post(`${baseurl}`,product ) as Observable<Product>;
   }
 
   change(product:Product): Observable<any> { //Change/ Put (2 parameters)
-    return this.http.put(`${baseurl}/${product.id}`, product) as Observable<any>;
+    return this.http.put(`${baseurl}/${product.id}`,product) as Observable<any>;
   }
 
   remove(product:Product): Observable<Product> { //Remove / Delete (2 parameters)

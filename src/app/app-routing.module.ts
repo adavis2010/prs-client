@@ -30,7 +30,7 @@ const routes: Routes = [
   { path :'users/detail/:id', component: UserDetailComponent}, // : means variable
   { path :'users/create', component: UserCreateComponent},
   { path :'users/edit/:id', component: UserEditComponent},
-  { path :'login', component: UserLoginComponent},
+  { path :'users/login', component: UserLoginComponent},
   
   { path :'vendors/list', component: VendorListComponent},
   { path :'vendors/detail/:id', component: VendorDetailComponent}, // : means variable

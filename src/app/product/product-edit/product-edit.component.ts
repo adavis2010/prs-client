@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SystemService } from 'src/app/system.service';
 import { Vendor } from 'src/app/vendor/vendor.class';
 import { VendorService } from 'src/app/vendor/vendor.service';
 import { Product } from '../product.class';
@@ -54,7 +53,8 @@ export class ProductEditComponent implements OnInit {
         console.error(err)
       }
     );
-  }
+  } 
+  // this.
   // this.sys.chkLogin();
   // this.vendors.list().subscribe(
   // res => {console.debug(res); this.vendors = res;},

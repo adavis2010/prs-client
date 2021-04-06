@@ -16,10 +16,10 @@ export class ProductDetailComponent implements OnInit {
 
   product: Product = null;
   vendors: Vendor[] = [];
-  showDelete: boolean = false; // verify button
+  showVerify: boolean = false; // verify button
 
-  verify(): void {
-    this.showDelete = !this.showDelete;
+  toggleVerify(): void {
+    this.showVerify= !this.showVerify;
   }
 
   delete(): void {

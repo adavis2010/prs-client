@@ -15,7 +15,7 @@
             <th>Phone</th>
             <th>Email</th>
         </tr>
-        <tr *ngFor="let vendor of vendors">
+        <tr *ngFor="let vendor of vendors | vendorSearch:searchCriteria" >
             <td>{{vendor.id}}</td>
             <td>{{vendor.code}}</td>
             <td>{{vendor.name}}</td>

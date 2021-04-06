@@ -1,5 +1,5 @@
 import { User } from '../user/user.class';
-//import { Requestline } from '../requestline/requestline.class';
+//import { Requestline } from '../requestline.class';
 
 export class Request {
     id:number=0;
