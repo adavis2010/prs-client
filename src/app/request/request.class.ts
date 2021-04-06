@@ -1,5 +1,5 @@
 import { User } from '../user/user.class';
-//import { Requestline } from '../requestline.class';
+import { Requestline } from '../requestline/requestline.class';
 
 export class Request {
     id:number=0;
@@ -11,6 +11,9 @@ export class Request {
     total:number=0;
     userId:number=0;
     user: User;
-    usersName:string='';
-    //requestline: Requestline[];
+    username:string='';
+    requestline: Requestline[];
+ 
+    constructor() {}
+
 }

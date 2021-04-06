@@ -30,13 +30,14 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
-//import { RequestSearchPipe } from './request/request-search.pipe';
-import { VendorSearchPipe } from './vendor/vendor-search.pipe'
+import { VendorSearchPipe } from './vendor/vendor-search.pipe';
 import { ProductSearchPipe } from './product/product-search.pipe';
-import { RequestlineListComponent } from './requestline/requestline-list/requestline-list.component';
-import { RequestlineDetailComponent } from './requestline/requestline-detail/requestline-detail.component';
+import { RequestSearchPipe } from './request/request-search.pipe';
+
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
+
 
 
 @NgModule({
@@ -65,13 +66,13 @@ import { RequestlineCreateComponent } from './requestline/requestline-create/req
     RequestDetailComponent,
     RequestCreateComponent,
     RequestEditComponent,
-    //RequestSearchPipe,
+    RequestSearchPipe,
     VendorSearchPipe,
     ProductSearchPipe,
-    RequestlineListComponent,
-    RequestlineDetailComponent,
     RequestlineEditComponent,
-    RequestlineCreateComponent
+    RequestlineCreateComponent,
+    RequestReviewComponent,
+   
     
   ],
   imports: [

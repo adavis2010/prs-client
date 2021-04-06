@@ -42,10 +42,10 @@ const routes: Routes = [
   { path :'products/create', component: ProductCreateComponent},
   { path :'products/edit/:id', component: ProductEditComponent},
 
-  { path: 'request/list', component: RequestListComponent },
-  { path: 'request/detail/:id', component: RequestDetailComponent },
-  { path: 'request/create', component: RequestCreateComponent },
-  { path: 'request/edit/:id', component: RequestEditComponent },
+  { path: 'requests/list', component: RequestListComponent },
+  { path: 'requests/detail/:id', component: RequestDetailComponent },
+  { path: 'requests/create', component: RequestCreateComponent },
+  { path: 'requests/edit/:id', component: RequestEditComponent },
 
 
   { path: '**', component: HomeComponent }, // needs to be at the end
