@@ -30,7 +30,7 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
-import { SearchRequestPipe } from './request/search-request.pipe';
+//import { RequestSearchPipe } from './request/request-search.pipe';
 import { VendorSearchPipe } from './vendor/vendor-search.pipe'
 import { ProductSearchPipe } from './product/product-search.pipe';
 
@@ -61,7 +61,7 @@ import { ProductSearchPipe } from './product/product-search.pipe';
     RequestDetailComponent,
     RequestCreateComponent,
     RequestEditComponent,
-    SearchRequestPipe,
+    //RequestSearchPipe,
     VendorSearchPipe,
     ProductSearchPipe
     

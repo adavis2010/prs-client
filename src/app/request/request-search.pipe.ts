@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Request } from './request.class'
 
 @Pipe({
-  name: 'searchRequest'
+  name: 'Requestsearch'
 })
 export class SearchRequestPipe implements PipeTransform {
 
