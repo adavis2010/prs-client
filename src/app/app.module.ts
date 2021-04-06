@@ -37,6 +37,7 @@ import { RequestSearchPipe } from './request/request-search.pipe';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { RequestLineComponent } from './request/request-line/request-line.component';
 
 
 
@@ -72,6 +73,7 @@ import { RequestReviewComponent } from './request/request-review/request-review.
     RequestlineEditComponent,
     RequestlineCreateComponent,
     RequestReviewComponent,
+    RequestLineComponent,
    
     
   ],

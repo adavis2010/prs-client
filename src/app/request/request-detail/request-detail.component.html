@@ -21,44 +21,39 @@
         <tr>
             <th>Justification</th>
             <td>
-                <input [(ngModel)]="request.justification" type="text" disabled>
+                <input [(ngModel)]="request.justification"| type="text" disabled>
             </td>
         </tr>
         <tr>
-            <th>RejectionReason</th>
+            <th>Rejection Reason</th>
             <td>
-                <input [(ngModel)]="request.rejectionreason" type="text" disabled>
+                <input [(ngModel)]="request.rejectionreason" type="number" disabled>
             </td>
         </tr>
         <tr>
             <th>Delivery Mode</th>
             <td>
-                <input [(ngModel)]="request.deliverymode" type="text" disabled>
+                <input [(ngModel)]="request.deliveryMode" type="text" disabled>
             </td>
         </tr>
         <tr>
-            <th>Status</th>
+            <th>Total</th>
             <td>
-                <input [(ngModel)]="request.status" type="text" disabled>
+                <input [(ngModel)]="request.total" type="text" disabled>
             </td>
         </tr>
         <tr>
-                    <th>Request Detail</th>
-        <td>
-            <select [(ngModel)]="request.userId">
-                <option *ngFor="let request of request.id" value="{{user.id}}" disabled>{{vendor.name}}</option>
-            </select>
-        </td>
+            <th>User Request</th>
+            <input [(ngModel)]= "request.user.username",disabled>
         </tr>
-
         <br>
-        <button class="btn btn-warning" routerLink="/requests/edit/{{user.id}}">Edit
+        <button class="btn btn-warning" routerLink="/requests/edit/{{request.id}}">Edit
         </button> |
         <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>
         <span *ngIf="showVerify">
-            <button (click)="delete()" class="btn btn-success">Verify Review</button>
+            <button (click)="review()" class="btn btn-info">Review Ready</button>
         </span>
-        
+
 
     </table>
 </div>
