@@ -21,7 +21,7 @@ export class ProductService {
   }
 
   create(product:Product): Observable<Product> { //Create/ Post(2 parameters)
-    return this.http.post(`${baseurl}`, product) as Observable<Product>;
+    return this.http.post(`${baseurl}`,`${product.id}` ) as Observable<Product>;
   }
 
   change(product:Product): Observable<any> { //Change/ Put (2 parameters)

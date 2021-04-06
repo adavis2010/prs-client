@@ -11,7 +11,7 @@ export class Product {
     photoPath:string='';
     vendorId:string='';
     vendor: Vendor= null;
-    vendorName : string;
+    vendorName : string ='';
 
     constructor(){}
 

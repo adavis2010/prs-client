@@ -31,8 +31,9 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { SearchRequestPipe } from './request/search-request.pipe';
-import { SearchVendorPipe } from './vendor/vendor-search.pipe'
-//import { SearchProductPipe } from './product/search-product.pipe';
+//import { SearchVendorPipe } from './vendor/vendor-search.pipe'
+import { ProductSearchPipe } from './product/search-product.pipe';
+
 
 @NgModule({
   declarations: [
@@ -61,6 +62,8 @@ import { SearchVendorPipe } from './vendor/vendor-search.pipe'
     RequestCreateComponent,
     RequestEditComponent,
     SearchRequestPipe,
+    //SearchVendorPipe,
+    ProductSearchPipe
     
   ],
   imports: [

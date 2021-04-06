@@ -7,18 +7,18 @@ import { Product} from './product.class'
 })
 export class ProductSearchPipe implements PipeTransform {
 
-    transform(vendors: Product[], searchCriteria): Product[] {
-        let selectedVendors: Product[] = [];
+    transform(products: Product[], searchCriteria): Product[] {
+        let selectedProducts: Product[] = [];
         if (searchCriteria.length == 0) {
-            return products;
+           return products;
         }
         for (let product of products) {
             if (product.id.toString().includes(searchCriteria.toLowerCase)
-                || product.partnbr.toString().includes(searchCriteria.toLowerCase)
+                || product.partNbr.toString().includes(searchCriteria.toLowerCase)
                 || product.description.toString().includes(searchCriteria.toLowerCase)
                 || product.price.toString().includes(searchCriteria.toLowerCase)
                 || product.unit.toString().includes(searchCriteria.toLowerCase)
-                || product.photopath.toString().includes(searchCriteria.toLowerCase)
+                || product.photoPath.toString().includes(searchCriteria.toLowerCase)
                 || product.vendorId.toString().includes(searchCriteria.toLowerCase)
             )
                 selectedProducts.push(product)
