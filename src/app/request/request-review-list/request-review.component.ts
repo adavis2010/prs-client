@@ -22,7 +22,7 @@ export class RequestReviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.request.userId=+this.syssvc.loggedInUser.id;
-    this.requestsvc.review(this.request.userId).subscribe(
+    this.requestsvc.review(this.request).subscribe(
       res=>{
         console.log(res);
         this.requests = res as Request[]

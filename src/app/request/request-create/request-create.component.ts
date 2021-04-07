@@ -22,6 +22,10 @@ export class RequestCreateComponent implements OnInit {
     private usersvc: UserService
   ) { }
 
+  save():void {
+
+  }
+
   ngOnInit(): void {
     let id = this.route.snapshot.params.id;
     this.requestsvc.get(+id).subscribe(

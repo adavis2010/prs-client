@@ -34,9 +34,9 @@ import { VendorSearchPipe } from './vendor/vendor-search.pipe';
 import { ProductSearchPipe } from './product/product-search.pipe';
 import { RequestSearchPipe } from './request/request-search.pipe';
 
-import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+//import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
-import { RequestReviewComponent } from './request/request-review/request-review.component';
+import { RequestReviewComponent } from './request/request-review-list/request-review.component';
 import { RequestLineComponent } from './request/request-line/request-line.component';
 
 
@@ -70,7 +70,7 @@ import { RequestLineComponent } from './request/request-line/request-line.compon
     RequestSearchPipe,
     VendorSearchPipe,
     ProductSearchPipe,
-    RequestlineEditComponent,
+    // RequestlineEditComponent,
     RequestlineCreateComponent,
     RequestReviewComponent,
     RequestLineComponent,

@@ -21,7 +21,7 @@
         <tr>
             <th>Justification</th>
             <td>
-                <input [(ngModel)]="request.justification"| type="text" disabled>
+                <input [(ngModel)]="request.justification" | type="text" disabled>
             </td>
         </tr>
         <tr>
@@ -42,24 +42,24 @@
                 <input [(ngModel)]="request.status" type="text" disabled>
             </td>
         </tr>
-        <th>Total</th>
+        <tr>
+            <th>Total</th>
             <td>
                 <input [(ngModel)]="request.total" type="text" disabled>
             </td>
         </tr>
-        <th>User Request</th>
+        <tr>
+            <th>User Request</th>
             <td>
                 <input [(ngModel)]="request.username" type="text" disabled>
             </td>
         </tr>
-        
-        <br>
-        <button class="btn btn-warning" routerLink="/requests/review/{{request.id}}">Revie|
-        
-        <span *ngIf="showVerify">
-            <button (click)="review()" class="btn btn-info">Review Ready</button>
-        </span>
-
 
     </table>
+    <br>
+    <button class="btn btn-warning" routerLink="/requests/review/{{request.id}}">Review</button>
+
+    <span *ngIf="showVerify">
+        <button (click)="review()" class="btn btn-info">Review Ready</button>
+    </span>
 </div>

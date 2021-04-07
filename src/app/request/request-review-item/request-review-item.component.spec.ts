@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RequestlineEditComponent } from './requestline-edit.component';
+import { RequestReviewItemComponent } from './request-review-item.component';
 
-describe('RequestlineEditComponent', () => {
-  let component: RequestlineEditComponent;
-  let fixture: ComponentFixture<RequestlineEditComponent>;
+describe('RequestReviewItemComponent', () => {
+  let component: RequestReviewItemComponent;
+  let fixture: ComponentFixture<RequestReviewItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RequestlineEditComponent ]
+      declarations: [ RequestReviewItemComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RequestlineEditComponent);
+    fixture = TestBed.createComponent(RequestReviewItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
