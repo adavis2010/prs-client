@@ -33,23 +33,29 @@
         <tr>
             <th>Delivery Mode</th>
             <td>
-                <input [(ngModel)]="request.deliveryMode" type="text" disabled>
+                <input [(ngModel)]="request.deliverymode" type="text" disabled>
             </td>
         </tr>
         <tr>
-            <th>Total</th>
+            <th>Status</th>
+            <td>
+                <input [(ngModel)]="request.status" type="text" disabled>
+            </td>
+        </tr>
+        <th>Total</th>
             <td>
                 <input [(ngModel)]="request.total" type="text" disabled>
             </td>
         </tr>
-        <tr>
-            <th>User Request</th>
-            <input [(ngModel)]= "request.user.username",disabled>
+        <th>User Request</th>
+            <td>
+                <input [(ngModel)]="request.username" type="text" disabled>
+            </td>
         </tr>
+        
         <br>
-        <button class="btn btn-warning" routerLink="/requests/edit/{{request.id}}">Edit
-        </button> |
-        <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>
+        <button class="btn btn-warning" routerLink="/requests/review/{{request.id}}">Revie|
+        
         <span *ngIf="showVerify">
             <button (click)="review()" class="btn btn-info">Review Ready</button>
         </span>

@@ -31,15 +31,15 @@
             </td>
         </tr>
         <tr>
-            <th>Delivery Mode</th>
+            <th>status</th>
             <td>
-                <input [(ngModel)]="request.deliveryMode" type="text" disabled>
+                <input [(ngModel)]="request.status" type="text" disabled>
             </td>
         </tr>
         <tr>
-            <th>Total</th>
+            <th>UserId</th>
             <td>
-                <input [(ngModel)]="request.total" type="text" disabled>
+                <input [(ngModel)]="request.userid" type="text" disabled>
             </td>
         </tr>
         <tr>
@@ -58,18 +58,3 @@
     </table>
 </div>
 
-
-
-
-
-<tr *ngFor="let request of requests | requestSearch: searchCriteria">
-        <td>{{request.id}}</td>
-        <td>{{request.description}}</td>
-        <td>{{request.justification}}</td>
-        <td>{{request.rejectionReason}}</td>
-        <td>{{request.status}}</td>
-        <td><a routerLink="/user/detail/{{request.user.id}}">}</a></td>
-        <td>
-    </tr>
-</table>
-</div>
