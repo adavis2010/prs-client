@@ -54,12 +54,9 @@
                 <input [(ngModel)]="request.username" type="text" disabled>
             </td>
         </tr>
-
-
     </table>
     <br>
-    <button class="btn btn-warning" routerLink="/requests/review/{{request.id}}">Create</button>
-
+    <button class="btn btn-success" routerLink="/requests/review/{{request.id}}">Create</button>
     <span>
         <button (click)="save()" class="btn btn-info">Save</button>
     </span>

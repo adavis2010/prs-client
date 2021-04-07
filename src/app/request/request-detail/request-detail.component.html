@@ -51,14 +51,19 @@
         <tr>
             <th>User Request</th>
             <td>
+            <td>
                 <input [(ngModel)]="request.username" type="text" disabled>
             </td>
         </tr>
 
     </table>
     <br>
+    <button class="btn btn-warning" routerLink="/request/edit/{{request.id}}">Edit</button>
+    <button (click)="toggleVerify()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerify">
+        <button (click)="delete()" class="btn btn-success">Verify Delete</button>
+    </span>
     <button class="btn btn-warning" routerLink="/requests/review/{{request.id}}">Review</button>
-
     <span *ngIf="showVerify">
         <button (click)="review()" class="btn btn-info">Review Ready</button>
     </span>
