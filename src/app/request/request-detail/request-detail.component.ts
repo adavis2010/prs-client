@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { User } from 'src/app/user/user.class';
-import { UserService } from 'src/app/user/user.service';
 import { Request } from 'src/app/request/request.class';
 import { RequestService } from '../request.service';
+import { SystemService } from 'src/app/system.service';
 
 @Component({
   selector: 'app-request-detail',
@@ -12,62 +11,52 @@ import { RequestService } from '../request.service';
 })
 export class RequestDetailComponent implements OnInit {
 
-  request: Request=null;
-  users: User[]=[];
-  showVerify: boolean = false; // verify button
+  request: Request = null;
+  showDelete: boolean = false; // delete button
 
   toggleVerify(): void {
-    this.showVerify= !this.showVerify; // delete
+    this.showDelete = !this.showDelete; // delete
   }
 
   constructor(
-    private requestsvc: RequestService,
     private router: Router,
     private route: ActivatedRoute,
-    private usersvc: UserService
+    private reqService: RequestService,
+    private sys: SystemService
   ) { }
 
-  delete():void {
-    this.requestsvc.remove(this.request.id).subscribe(
+  verify(): void { this.showDelete = !this.showDelete }
+
+  delete(): void {
+    this.reqService.delete(this.request.id).subscribe(
       res => {
-        console.log("Request change successful");
+        console.log(res);
+        this.router.navigateByUrl("/requests/list");
+      },
+      err => {
+        console.error(err);
+      }
+    )
+  }
+  review(): void {
+    this.reqService.review(this.request).subscribe(
+      res => {
         this.router.navigateByUrl("/request/list");
       },
-      err=>{
+      err => {
         console.error(err);
       }
     );
   }
-  review():void {
-    this.requestsvc.review(this.request).subscribe(
-      res=>{
-        this.router.navigateByUrl("/request/list");
-      },
-      err=>{
-        console.error(err);
-      }
-    );
-  }
+
   ngOnInit(): void {
     let id = this.route.snapshot.params.id;
-    this.requestsvc.get(+id).subscribe(
-      res=>{
-        console.log("Request", res)
-        this.request = res as Request;
-      },
-      err=> {
-        console.error(err);
-      }
-    );
-
-    this.usersvc.list().subscribe(
-      res => {
-        this.users = res as User[];
-      },
-      err=>{
-        console.error(err);
-      }
-    );
+    this.reqService.get(+id).subscribe(
+      res => { this.request = res as Request; },
+      err => { console.error(err) }
+    )
   }
 
 }
+
+

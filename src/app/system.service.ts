@@ -7,7 +7,7 @@ import { User } from './user/user.class';
 })
 export class SystemService {
 
-  loggedInUser:User = null;
+  loggedInUser:User=null;
 
   constructor(
     private router: Router

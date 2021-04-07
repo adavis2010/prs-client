@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './requestline-edit.component.html',
   styleUrls: ['./requestline-edit.component.css']
 })
-export class //RequestlineEditComponent implements OnInit {//
+export class// RequestlineEditComponent implements OnInit {//
 
   //constructor() { }
 
@@ -17,4 +17,4 @@ export class //RequestlineEditComponent implements OnInit {//
     //this.requestline.requestId = this.route.snapshot.params.rid;
   //}
 
-
+{}

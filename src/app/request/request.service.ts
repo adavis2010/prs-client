@@ -12,13 +12,13 @@ export class RequestService {
 
   constructor(private http: HttpClient) { }
 
-  approve(request: Request): Observable<any> {  //Approve REQUEST/PUT
+  approve(request: Request): Observable<Request> {  //Approve REQUEST/PUT
     return this.http.put(`${baseurl}/approve`, request) as Observable<any>;
     }
-    review(request: Request): Observable < any > {  // Review /PUT
+    review(request: Request): Observable <Request> {  // Review /PUT
       return this.http.put(`${baseurl}/review`, request) as Observable<any>;
     }
-    reject(request: Request): Observable < any > {  //REJECT REQUEST/PUT
+    reject(request: Request): Observable <Request > {  //REJECT REQUEST/PUT
       return this.http.put(`${baseurl}/reject`, request) as Observable<any>;
     }
 
@@ -33,10 +33,10 @@ export class RequestService {
     create(request: Request): Observable < Request > {
       return this.http.post(`${baseurl}`, request) as Observable<Request>;
     }
-    change(request: Request): Observable < any > { //Put/ Change
+    edit(request: Request): Observable < any > { //Put/ Change/edit
       return this.http.put(`${baseurl}/${request.id}`, request) as Observable<any>;
     }
-    remove(id: number): Observable < Request > { //Delete
+    delete(id: number): Observable < Request > { //Delete
       return this.http.delete(`${baseurl}/${id}`) as Observable<Request>;
     }
   }

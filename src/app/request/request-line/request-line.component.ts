@@ -1,51 +1,47 @@
 import { Component, OnInit } from '@angular/core';
+import { Request } from '../request.class';
+import { Requestline } from '../../requestline/requestline.class'
 import { ActivatedRoute } from '@angular/router';
-import { Requestline } from 'src/app/requestline/requestline.class';
 import { RequestService } from '../request.service';
-import { Request } from 'src/app/request/request.class';
+//import { RequestlineService } from '../../requestline/request-line.service'
+import { User } from 'src/app/user/user.class';
 
 @Component({
-  selector: 'app-request-line',
-  templateUrl: './request-line.component.html',
-  styleUrls: ['./request-line.component.css']
+  selector: 'app-request-lines',
+  templateUrl: './request-lines.component.html',
+  styleUrls: ['./request-lines.component.css']
 })
-export class RequestLineComponent implements OnInit {
-  requestId: number=0;
-  request: Request=null;
-  requestline: Requestline;
+export class RequestLinesComponent implements OnInit {
+  user:User;
+  request:Request = null;
+  myRequest:boolean = false;
+  showDelete:boolean = false;
   showVerify: boolean=false;
-  
 
   constructor(
     private route: ActivatedRoute,
     private requestsvc: RequestService,
-    //private requestlinesvc: RequestLineService
+    private reqLinesrv: RequestlineService
   ) { }
   
-  verify(id:number):void {
-    this.showVerify = false;
-    //this.requestlinesvc.remove(id).subscribe(
-      res=>{
-        console.log("RequestLine create successful");
-        this.refresh(this.requestId);
-      }
-    //);
-  }
-  refresh(id:number): void {
-    this.requestsvc.get(id).subscribe(
-      res=>{
-        console.log("Request", res);
-        this.request = res as Request;
-      },
-      err=>{
-        console.error(err);
-      }
-    );
+  verify():void {this.showDelete = !this.showDelete}
+  delete(id:number, requestid:number):void {
+    
+    
+    
   }
 
   ngOnInit(): void {
-    this.requestId = +this.route.snapshot.params.id;
-    this.refresh(this.requestId);
+    this.system.loggedinuser();
+    let id = this.route.snapshot.params.id;
+    this.requestsvc.detail(+id).subscribe(
+      res => {this.request = res as Request;
+        this.user = this.system.user;
+        this.myRequest = (this.request.userId == this.user.id) ? true : false;
+        console.log(res);},
+      err => {console.error(err)}
+    );
   }
 
+  
 }
