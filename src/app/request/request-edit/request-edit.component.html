@@ -1,13 +1,14 @@
 <app-menu></app-menu>
-<label class="pageTitle">{{pageTitle}}</label>
+<h3>Request Edit</h3>
+<span><a routerLink="/requests/list"> Back to List</a></span>
 <table *ngIf="request" class="table table-lg">
     <tr>
         <th>Id</th>
-        <td><input [(ngModel)]="request.id" type="text" disabled></td>
+        <td><input [(ngModel)]="request.id" type="number" disabled></td>
     </tr>
     <tr>
         <th>User</th>
-        <td><input [(ngModel)]="request.user.username" type="text"></td>
+        <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
     </tr>
     <tr>
         <th>Description</th>
@@ -25,20 +26,7 @@
         <th>Total</th>
         <td><input [(ngModel)]="request.total" type="number"disabled></td>
     </tr>
-    <tr *ngIf="isReviewer" >
-        <th>STATUS</th>
-        <td><select [(ngModel)]="request.status">
-            <option value="Approved">Approved</option>
-            <option value="Rejected">Rejected</option>
-        </select></td>
-    </tr>
-    <tr *ngIf="isReviewer" >
-        <th>Rejection Reason</th>
-        <td><input [(ngModel)]="request.rejectionReason" type="text" size="20"></td>
-    </tr>
     <tr >
-        <button class="btn btn-success" (click)="edit()">Submit</button>
-        <button class="btn btn-danger" (click)="verify()">Delete</button>
-        <button *ngIf="showDelete" class="btn btn-danger" (click)="delete()">Verify</button>
+        <button (click)="save()" class="btn btn-success">Save</button> 
     </tr>
 </table>

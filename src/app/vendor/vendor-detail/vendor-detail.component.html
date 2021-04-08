@@ -2,6 +2,7 @@
     <div>
         <span>
             <h3>Vendor Detail</h3>
+            <span><a routerLink="/requests/list"> Back to List</a></span>
         </span>
     </div>
     <table class="table table-lg" *ngIf="vendor">
@@ -43,13 +44,13 @@
         </tr>
         <td>
             <tr>
-                <th>Email</th>
+    <th>Email</th>
                 <td>
                     <input [(ngModel)]="vendor.email" type="text" disabled>
                 </td>
             </tr>
             <tr>
-                <th>Phone</th>
+     <th>Phone</th>
                 <td>
                     <input [(ngModel)]="vendor.phone" type="text" disabled>
                 </td>

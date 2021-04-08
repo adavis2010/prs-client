@@ -7,7 +7,7 @@ export class Request {
     justification:string='';
     rejectionReason:string='';
     deliveryMode:string='';
-    status:string='REVIEW';
+    status:string='NEW';
     total:number=0;
     userId:number=0;
     user: User;

@@ -15,11 +15,14 @@ export class RequestService {
   approve(request: Request): Observable<Request> {  //Approve REQUEST/PUT
     return this.http.put(`${baseurl}/approve`, request) as Observable<any>;
     }
-    review(request: Request): Observable <Request> {  // Review /PUT
+    review(request: Request): Observable <Request> {  // Review /PUT/AUTO REVIEW
       return this.http.put(`${baseurl}/review`, request) as Observable<any>;
     }
     reject(request: Request): Observable <Request > {  //REJECT REQUEST/PUT
       return this.http.put(`${baseurl}/reject`, request) as Observable<any>;
+    }
+    reviewlist(id:number):Observable<Request[]>{// will list status of review
+      return this.http.get(`${baseurl}/review/${id}`)as Observable<Request[]>
     }
 
     list(): Observable < Request[] > {  //Get All

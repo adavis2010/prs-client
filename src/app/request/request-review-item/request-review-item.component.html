@@ -1,1 +1,43 @@
-<p>request-review-item works!</p>
+<app-menu></app-menu>
+<h3>Request Detail</h3>
+<span><a routerLink="/requests/list"> Back to List</a></span>
+<table *ngIf="request" class="table table-lg">
+    <tr>
+        <th>Id</th>
+        <td><input [(ngModel)]="request.id" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td><input [(ngModel)]="request.description" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Justification</th>
+        <td><input [(ngModel)]="request.justification" type="text" disabled></td>
+    </tr>
+    <tr>
+        <th>Rejection Reason</th>
+        <td><input [(ngModel)]="request.rejectionReason" type="text"  disabled></td>
+    </tr>
+    <tr>
+        <th>Delivery Mode</th>
+        <td><input [(ngModel)]="request.deliveryMode" type="text"  disabled></td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td><input [(ngModel)]="request.status" type="text"  disabled></td>
+    </tr>
+    <tr>
+        <th>Total</th>
+        <td><input [(ngModel)]="request.total" type="number" disabled></td>
+    </tr>
+    <tr>
+        <th>User</th>
+        <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
+    </tr>
+    <button (click)="approve()" class="btn btn-info">Approve</button> |
+    <button (click)="verify()" class="btn btn-danger">Reject</button>|
+    <span *ngIf="showReject">
+
+        <button (click)="reject()" class="btn btn-success">Verify Reject</button>
+    </span>
+</table>

@@ -6,6 +6,7 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list component';
 
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
@@ -22,6 +23,7 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { RequestLinesComponent } from './request/request-line/request-line.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'/home', pathMatch: 'full'},
@@ -46,6 +48,9 @@ const routes: Routes = [
   { path: 'requests/detail/:id', component: RequestDetailComponent },
   { path: 'requests/create', component: RequestCreateComponent },
   { path: 'requests/edit/:id', component: RequestEditComponent },
+  { path :'requests/lines/:id', component: RequestLinesComponent},
+  { path: 'requests/request-review-list', component: RequestReviewListComponent },
+
 
 
   { path: '**', component: HomeComponent }, // needs to be at the end

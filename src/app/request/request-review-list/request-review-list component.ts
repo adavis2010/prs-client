@@ -4,35 +4,36 @@ import { RequestService } from '../request.service';
 import { Request } from 'src/app/request/request.class';
 
 @Component({
-  selector: 'app-request-review',
-  templateUrl: './request-review.component.html',
-  styleUrls: ['./request-review.component.css']
+  selector: 'app-request-review-list',
+  templateUrl: './request-review-list.component.html',
+  styleUrls: ['./request-review-list.component.css']
 })
-export class RequestReviewComponent implements OnInit {
+export class RequestReviewListComponent implements OnInit {
 
   requests: Request[];
-  request:Request= new Request();
-  searchCriteria: string='';
+  request: Request = new Request();
+  searchCriteria: string = '';
 
 
   constructor(
     private syssvc: SystemService,
-    private requestsvc: RequestService 
+    private requestsvc: RequestService
   ) { }
 
   ngOnInit(): void {
-    this.request.userId=+this.syssvc.loggedInUser.id;
-    this.requestsvc.review(this.request).subscribe(
-      res=>{
+    this.request.userId = +this.syssvc.loggedInUser.id
+    this.requestsvc.reviewlist(this.request.userId).subscribe(
+      res => {
         console.log(res);
-        this.requests = res as Request[]
+        this.requests = res as Request[];
       },
-      err=>{
+      err => {
         console.error(err);
       }
+
     );
-
-
   }
 
 }
+
+

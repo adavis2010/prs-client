@@ -13,9 +13,11 @@ export class MenuComponent implements OnInit {
     {display:'Vendors', route: '/vendors/list'},
     {display:'Products', route: '/products/list'},
     {display:'Requests', route: '/requests/list'},
+    {display:'Reviews', route:'/requests/request-review-list'},
     {display:'About', route: '/about'},
     {display:'Help', route: '/help'},
-    {display:'Login', route:'/login'}
+    {display:'Login', route:'/users/login'},
+    
     
   ]
 

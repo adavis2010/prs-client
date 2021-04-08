@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-<label class="pageTitle">{{pageTitle}}</label>
+<h3>Request Detail</h3>
 <span><a routerLink="/requests/list"> Back to List</a></span>
 <table *ngIf="request" class="table table-lg">
     <tr>
@@ -7,7 +7,7 @@
         <td><input [(ngModel)]="request.id" type="text" disabled></td>
     </tr>
     <tr>
-        <th>Descri</th>
+        <th>Description</th>
         <td><input [(ngModel)]="request.description" type="text" disabled></td>
     </tr>
     <tr>
@@ -15,7 +15,7 @@
         <td><input [(ngModel)]="request.justification" type="text" disabled></td>
     </tr>
     <tr>
-        <th>Rejections Reason</th>
+        <th>Rejection Reason</th>
         <td><input [(ngModel)]="request.rejectionReason" type="text"  disabled></td>
     </tr>
     <tr>
@@ -34,4 +34,10 @@
         <th>User</th>
         <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
     </tr>
+    <button (click)="autoreview()" class="btn btn-info">Review</button> |
+    <button (click)="verify()" class="btn btn-danger">Delete</button>|
+    <span *ngIf="showDelete">
+
+        <button (click)="delete()" class="btn btn-success">Verify Delete</button>
+    </span>
 </table>

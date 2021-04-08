@@ -13,10 +13,7 @@ export class RequestDetailComponent implements OnInit {
 
   request: Request = null;
   showDelete: boolean = false; // delete button
-
-  toggleVerify(): void {
-    this.showDelete = !this.showDelete; // delete
-  }
+  pageTitle: string = "Request Detail";
 
   constructor(
     private router: Router,
@@ -26,6 +23,17 @@ export class RequestDetailComponent implements OnInit {
   ) { }
 
   verify(): void { this.showDelete = !this.showDelete }
+
+  autoreview(): void{this.reqService.review(this.request).subscribe(
+    res => {
+      console.log(res);
+      this.router.navigateByUrl("/requests/list");
+    },
+    err => {
+      console.error(err);
+    }
+
+  );}
 
   delete(): void {
     this.reqService.delete(this.request.id).subscribe(
@@ -38,15 +46,9 @@ export class RequestDetailComponent implements OnInit {
       }
     )
   }
-  review(): void {
-    this.reqService.review(this.request).subscribe(
-      res => {
-        this.router.navigateByUrl("/request/list");
-      },
-      err => {
-        console.error(err);
-      }
-    );
+  edit():void {
+    this.router.navigateByUrl(`/requests/edit/${this.request.id}`);
+
   }
 
   ngOnInit(): void {

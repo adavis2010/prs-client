@@ -9,7 +9,6 @@ import { User } from './user.class';
 export class UserService {
   
   baseurl: string = "http://localhost:32405/api/users"
-  login: any;
 
   constructor(
     private http : HttpClient
@@ -33,6 +32,9 @@ export class UserService {
   remove(user: User): Observable<User>{ //remove /DELETE (2 parameters)
     return this.http.delete(`${this.baseurl}/${user.id}`) as Observable<User>;
   }
+
+  login(username:string, password:string):Observable<User>{return this.http.get(`${this.baseurl}/${username}/${password}`)as Observable<User>}
+
 
 }
 
