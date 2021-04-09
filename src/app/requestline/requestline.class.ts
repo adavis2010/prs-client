@@ -1,4 +1,5 @@
 import { Product } from "../product/product.class";
+import {Request } from '../request/request.class'
 
 export class Requestline {
     id:number =0;
@@ -7,11 +8,8 @@ export class Requestline {
     quantity: number = 0;
     request: Request;
     product: Product;
-constructor() {}
-
     
-
-
+constructor() {}
 
 }
 

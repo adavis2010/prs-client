@@ -35,9 +35,10 @@ import { ProductSearchPipe } from './product/product-search.pipe';
 import { RequestSearchPipe } from './request/request-search.pipe';
 
  import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
-import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+//import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestLinesComponent } from './request/request-line/request-line.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list component';
+
 
 
 
@@ -71,9 +72,10 @@ import { RequestReviewListComponent } from './request/request-review-list/reques
     VendorSearchPipe,
     ProductSearchPipe,
     RequestlineEditComponent,
-    RequestlineCreateComponent,
+   // RequestlineCreateComponent,
     RequestReviewListComponent,
-    RequestLinesComponent
+    RequestLinesComponent,
+    
    
     
   ],

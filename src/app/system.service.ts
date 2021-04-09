@@ -13,6 +13,10 @@ export class SystemService {
     private router: Router
   ) { }
 
-
+  chkLogin(): void {
+    if(this.loggedInUser == null){
+     this.router.navigateByUrl('/users/login')
+    }
+  }
   
 }

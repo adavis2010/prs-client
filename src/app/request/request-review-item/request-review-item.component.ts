@@ -15,7 +15,7 @@ export class RequestReviewItemComponent implements OnInit {
   users: User[]=[];
   requestId: number=0;
   request: Request=null;
-  showverify: boolean=false
+  showReject: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,7 +35,7 @@ export class RequestReviewItemComponent implements OnInit {
   }
 
   verify(): void {
-    this.showverify= false;
+    this.showReject= false;
     this.requestsvc.reject(this.request).subscribe(
       res=>{
         this.router.navigateByUrl("/request/list");
@@ -46,7 +46,7 @@ export class RequestReviewItemComponent implements OnInit {
     );
   }
   reject():void {
-    this.showverify=!this.showverify;
+    this.showReject=!this.showReject;
   }
 
   ngOnInit(): void {
@@ -55,7 +55,6 @@ export class RequestReviewItemComponent implements OnInit {
     this.requestsvc.get(+id).subscribe(
       res=>{
         console.log("Product", res)
-       // this.request = res as Request;
       },
       err=> {
         console.error(err);
