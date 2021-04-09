@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<h3 Request Line></h3>
+<div>
+    <span><input [(ngModel)]="searchCriteria" type="text" placeholder="Search"></span>
+    <table class="table table-lg">
+        <tr>
+            <th>Id</th>
+            <td><input [(ngModel)]="requestline.id" type="number" disabled></td>
+        </tr>
+        <tr>
+            <th>Product</th>
+            <td>
+                <select [(ngModel)]="requestline.productId">
+                    <option *ngFor="let product of products" value={{product.id}}>{{product.description}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Quantity</th>
+            <td><input [(ngModel)]="requestline.quantity" type="number"></td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="edit()" type="button" class="btn btn-success btn-lg">Edit</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -12,6 +12,7 @@ export class Product {
     vendorId:number= 0;
     vendor: Vendor= null;
     vendorName : string ='';
+    //name: string = '';
 
     constructor(){}
 

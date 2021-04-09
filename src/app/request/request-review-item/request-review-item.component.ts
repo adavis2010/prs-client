@@ -26,7 +26,7 @@ export class RequestReviewItemComponent implements OnInit {
   approve():void {
     this.requestsvc.approve(this.request).subscribe(
       res=>{
-        this.router.navigateByUrl("/request/list");
+        this.router.navigateByUrl("/requests/list");
       },
       err=>{
         console.error(err);
@@ -38,7 +38,7 @@ export class RequestReviewItemComponent implements OnInit {
     this.showReject= false;
     this.requestsvc.reject(this.request).subscribe(
       res=>{
-        this.router.navigateByUrl("/request/list");
+        this.router.navigateByUrl("/requests/list");
       },
       err=>{
         console.error(err);
@@ -54,7 +54,8 @@ export class RequestReviewItemComponent implements OnInit {
     let id = this.route.snapshot.params.id;
     this.requestsvc.get(+id).subscribe(
       res=>{
-        console.log("Product", res)
+        console.log("Request", res);
+        this.request = res as Request;
       },
       err=> {
         console.error(err);

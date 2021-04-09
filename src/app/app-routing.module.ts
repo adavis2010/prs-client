@@ -7,6 +7,9 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestReviewListComponent } from './request/request-review-list/request-review-list component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestLineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
@@ -50,7 +53,9 @@ const routes: Routes = [
   { path: 'requests/edit/:id', component: RequestEditComponent },
   { path :'requests/lines/:id', component: RequestLinesComponent},
   { path: 'requests/request-review-list', component: RequestReviewListComponent },
-
+  { path: 'requests/request-review-item/:id', component: RequestReviewItemComponent },
+  {path: 'request-lines/create/:id',component: RequestLineCreateComponent},
+  {path: 'request-lines/edit/:id', component: RequestlineEditComponent},
 
 
   { path: '**', component: HomeComponent }, // needs to be at the end

@@ -23,7 +23,7 @@ export class RequestCreateComponent implements OnInit {
   ) { }
 
   save():void {
-    console.log("Before Create:, this.request")
+    console.log("Before Create:",this.request)
       this.requestsvc.create(this.request).subscribe(
        res =>{
         console.log("Create Successful");

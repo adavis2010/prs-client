@@ -3,23 +3,29 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product/product.class';
 import { ProductService } from 'src/app/product/product.service';;
 import { SystemService } from 'src/app/system.service';
-//import { Requestline} from 'src/app/requestline'
-import {RequestLineService} from 
+import { RequestlineService} from '../requestline.service';
+import { Requestline } from '../requestline.class';
+import { RequestService } from 'src/app/request/request.service';
+import { Request} from '../../request/request.class'
+
 @Component({
   selector: 'app-request-line-create',
-  templateUrl: './request-line-create.component.html',
-  styleUrls: ['./request-line-create.component.css']
+  templateUrl: './requestline-create.component.html',
+  styleUrls: ['./requestline-create.component.css']
 })
 export class RequestLineCreateComponent implements OnInit {
 
-  products: Product[];
+  products: Product[]= [];
   requestId: number = 0;
-  //requestLine: Requestline = new Requestline();
+  requestline: Requestline = new Requestline();
+  searchCriteria: string = '';
+  requests: Request[] = [];
 
   constructor(
 
     private productsvc: ProductService,
-    //private requestlineSvc: RequestLineService,
+    private requestlineSvc: RequestlineService,
+    private requestsvc: RequestService,
     private route: ActivatedRoute,
     private router: Router,
     private sys: SystemService
@@ -27,22 +33,30 @@ export class RequestLineCreateComponent implements OnInit {
   ) { }
 
   save(): void {
-    // this.requestLine.requestId = +this.requestId;
-    // this.requestLine.productId = +this.requestLine.productId;
-    // //this.requestlineSvc.create(this.requestLine).subscribe(
-    //   res => {
-    //     console.log("Request Line create Successful!"),
-    //       this.router.navigateByUrl(`/requests/lines/${this.requestId}`);
-    //   },
-    //   err => {
-    //     console.error(err);
-    //   }
-    // );
+     this.requestline.requestId = +this.requestId;
+     this.requestline.productId = +this.requestline.productId;
+     this.requestlineSvc.create(this.requestline).subscribe(
+       res => {
+         console.log("Request Line create Successful!"),
+           this.router.navigateByUrl(`/requests/lines/${this.requestline.requestId}`);
+       },
+       err => {
+         console.error(err);
+       }
+     );
   }
 
   ngOnInit(): void {
-    //this.sys.loggedInUser();
-    this.requestId = +this.route.snapshot.params.id;
+    this.requestId = this.route.snapshot.params.id;
+    this.requestsvc.list().subscribe(
+      res => {
+        console.log(res);
+        this.requests = res as Request[];
+      },
+      err => {
+        console.error(err);
+      }
+    );
     this.productsvc.list().subscribe(
       res => {
         console.log(res);

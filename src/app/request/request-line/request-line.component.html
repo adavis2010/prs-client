@@ -19,7 +19,7 @@
 </table>
 <hr>
 <h6>Requestlines</h6>
-<a *ngIf="request"class="click" routerLink="/request-lines/create/{{request.id}}">Add</a> 
+<a *ngIf="request" routerLink="/request-lines/create/{{request.id}}">Add</a>
 <table *ngIf="request" class="table table-lg">
     <thead>
         <th>Id</th>
@@ -35,12 +35,12 @@
         <td>{{request.quantity}}</td>
         <td>{{request.product.price | currency}}</td>
         <td>{{request.product.price * request.quantity | currency}}</td>
-
-
-        <td *ngIf="request"><a class="click" routerLink="/request-lines/edit/{{request.id}}">Edit</a> |
-            <a class="click" (click)="verify()">Delete</a>
-            <a class="click" *ngIf="showDelete" (click)="delete(request.id, request.id)">Confirm Delete</a>
+        <td>
+            <a routerLink="/request-lines/edit/{{request.id}}">Edit</a> |
+            <button (click)="verify()">Delete</button>
+            <span *ngIf="showDelete">
+                <button (click)="delete(request.id)"> | Confirm Delete</button>
+            </span>
         </td>
-        
     </tbody>
 </table>

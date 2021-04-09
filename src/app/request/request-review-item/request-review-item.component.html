@@ -1,6 +1,6 @@
 <app-menu></app-menu>
-<h3>Request Detail</h3>
-<span><a routerLink="/requests/list">Back to Menu</a></span>
+<h3>Review Request</h3>
+<span><a routerLink="/requests/list"></a></span>
 <table *ngIf="request" class="table table-lg">
     <tr>
         <th>Id</th>
@@ -15,16 +15,12 @@
         <td><input [(ngModel)]="request.justification" type="text" disabled></td>
     </tr>
     <tr>
-        <th>Rejection Reason</th>
-        <td><input [(ngModel)]="request.rejectionReason" type="text"  disabled></td>
-    </tr>
-    <tr>
         <th>Delivery Mode</th>
-        <td><input [(ngModel)]="request.deliveryMode" type="text"  disabled></td>
+        <td><input [(ngModel)]="request.deliveryMode" type="text" disabled></td>
     </tr>
     <tr>
         <th>Status</th>
-        <td><input [(ngModel)]="request.status" type="text"  disabled></td>
+        <td><input [(ngModel)]="request.status" type="text" disabled></td>
     </tr>
     <tr>
         <th>Total</th>
@@ -35,9 +31,10 @@
         <td><input [(ngModel)]="request.user.username" type="text" disabled></td>
     </tr>
     <button (click)="approve()" class="btn btn-info">Approve</button> |
-    <button (click)="verify()" class="btn btn-danger">Reject</button>|
+    <button (click)="reject()" class="btn btn-danger">Reject</button>|
     <span *ngIf="showReject">
+        <input [(ngModel)]= "request.rejectionReason" type="text" placeholder="Enter Rejection Reason">
 
-        <button (click)="reject()" class="btn btn-success">Verify Reject</button>
+        <button (click)="verify(request.id)" class="btn btn-success">Verify Reject</button>
     </span>
 </table>
